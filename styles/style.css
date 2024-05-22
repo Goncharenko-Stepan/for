@@ -1,0 +1,62 @@
+/* Скрываем стандартное радио */
+.radio-container input {
+  display: none;
+}
+
+/* Контейнер радио-кнопки */
+.radio-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+/* Прямоугольник, который заменяет радио-кнопку */
+.checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  width: 132.67px;
+  height: 40px;
+  gap: 0px;
+  border-radius: 100px 0px 0px 100px;
+  border: 1px;
+}
+
+/* Состояние при наведении */
+.radio-container:hover input ~ .checkmark {
+  background-color: #b3b3b3;
+}
+
+/* Состояние, когда радио-кнопка выбрана */
+.radio-container input:checked ~ .checkmark {
+  background-color: #4caf50;
+}
+
+/* Внутренний индикатор выбора */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+/* Стиль внутреннего индикатора выбора */
+.radio-container .checkmark::after {
+  left: 6px;
+  top: 2px;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
